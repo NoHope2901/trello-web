@@ -9,6 +9,7 @@ import Recent from './Menus/Recent'
 import Starred from './Menus/Starred'
 import Templates from './Menus/Templates'
 import Button from '@mui/material/Button'
+import LibraryAddIcon from '@mui/icons-material/LibraryAdd'
 import TextField from '@mui/material/TextField'
 import Badge from '@mui/material/Badge'
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline'
@@ -18,13 +19,13 @@ import Profiles from './Menus/Profiles'
 function AppBar() {
   return (
     <Box
-      px={2}
       sx={{
         width: '100%',
         height: (theme) => theme.trello.appBarHeight,
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
+        paddingX: 2,
         gap: 2,
         overflowX: 'auto',
       }}
@@ -43,7 +44,9 @@ function AppBar() {
           <Recent />
           <Starred />
           <Templates />
-          <Button variant='outlined'>Create</Button>
+          <Button variant='outlined' startIcon={<LibraryAddIcon />}>
+            Create
+          </Button>
         </Box>
       </Box>
 
