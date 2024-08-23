@@ -34,7 +34,7 @@ function Profiles() {
           aria-expanded={open ? 'true' : undefined}
         >
           <Avatar
-            sx={{ width: 34, height: 34 }}
+            sx={{ width: 36, height: 36 }}
             alt='gojo-satoru'
             src='https://i.pinimg.com/564x/0c/25/42/0c25424c87b5184c185d84c2d40a99de.jpg'
           />
