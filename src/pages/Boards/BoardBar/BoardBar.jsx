@@ -10,7 +10,7 @@ import AvatarGroup from "@mui/material/AvatarGroup";
 import { Tooltip } from "@mui/material";
 import Button from "@mui/material/Button";
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
-
+import { capitalizeFirstLetter } from "~/utils/formatters";
 const MENU_STYLES = {
   color: "white",
   bgcolor: "transparent",
@@ -25,7 +25,7 @@ const MENU_STYLES = {
   },
 };
 
-function BoardBar() {
+function BoardBar({ board }) {
   return (
     <Box
       sx={{
@@ -37,13 +37,13 @@ function BoardBar() {
         gap: 2,
         paddingX: 2,
         overflowX: "auto",
-        borderBottom: "1px solid #00baf5",
+
         bgcolor: (theme) => (theme.palette.mode === "dark" ? "#34495e" : "#1976d2"),
       }}
     >
       <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
-        <Chip sx={MENU_STYLES} icon={<DashboardIcon />} label='With Icon' clickable />
-        <Chip sx={MENU_STYLES} icon={<VpnLockIcon />} label='Public/Private workspace' clickable />
+        <Chip sx={MENU_STYLES} icon={<DashboardIcon />} label={board?.title} clickable />
+        <Chip sx={MENU_STYLES} icon={<VpnLockIcon />} label={capitalizeFirstLetter(board?.type)} clickable />
         <Chip sx={MENU_STYLES} icon={<AddToDriveIcon />} label='Add to drive' clickable />
         <Chip sx={MENU_STYLES} icon={<BoltIcon />} label='Automation' clickable />
         <Chip sx={MENU_STYLES} icon={<FilterListIcon />} label='Filters' clickable />
